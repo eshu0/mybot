@@ -66,8 +66,8 @@ func (bot *MyBot) Stop() {
 	bot.Pin7.Low()
 }
 
-func (bot *MyBot) TurnRight() {
-	fmt.Println("Turning Right!")
+func (bot *MyBot) SpinRight() {
+	fmt.Println("Spinning Right!")
 
 	bot.Pin15.High()
 	bot.Pin11.Low()
@@ -75,8 +75,8 @@ func (bot *MyBot) TurnRight() {
 	bot.Pin7.High()
 }
 
-func (bot *MyBot) TurnLeft() {
-	fmt.Println("Turning Left!")
+func (bot *MyBot) SpinLeft() {
+	fmt.Println("Spinning Left!")
 	bot.Pin15.Low()
 	bot.Pin11.High()
 	bot.Pin13.High()
