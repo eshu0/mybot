@@ -7,10 +7,10 @@ import (
 )
 
 type MyBot struct {
-	Pin7  *rpio.Pin
-	Pin11 *rpio.Pin
-	Pin13 *rpio.Pin
-	Pin15 *rpio.Pin
+	Pin7  rpio.Pin
+	Pin11 rpio.Pin
+	Pin13 rpio.Pin
+	Pin15 rpio.Pin
 }
 
 func NewMyBot() *MyBot {
@@ -23,19 +23,19 @@ func NewMyBot() *MyBot {
 	}
 
 	// 4 is 7
-	mbot.Pin7 = &rpio.Pin(4)
+	mbot.Pin7 = rpio.Pin(4)
 	mbot.Pin7.Output()
 
 	// 11 is 17
-	mbot.Pin11 = &rpio.Pin(17)
+	mbot.Pin11 = rpio.Pin(17)
 	mbot.Pin11.Output()
 
 	//pin13 is 27
-	mbot.Pin13 = &rpio.Pin(27)
+	mbot.Pin13 = rpio.Pin(27)
 	mbot.Pin13.Output()
 
 	// pin 15 is 22
-	mbot.Pin15 = &rpio.Pin(22)
+	mbot.Pin15 = rpio.Pin(22)
 	mbot.Pin15.Output()
 
 	return mbot
