@@ -68,7 +68,6 @@ func (bot *MyBot) Stop() {
 
 func (bot *MyBot) SpinRight() {
 	fmt.Println("Spinning Right!")
-
 	bot.Pin15.High()
 	bot.Pin11.Low()
 	bot.Pin13.Low()
@@ -81,4 +80,8 @@ func (bot *MyBot) SpinLeft() {
 	bot.Pin11.High()
 	bot.Pin13.High()
 	bot.Pin7.Low()
+}
+
+func (bot *MyBot) Close() {
+	rpio.Close()
 }
