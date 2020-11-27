@@ -2,6 +2,7 @@ package main
 
 import (
 	"fmt"
+	"time"
 
 	Request "github.com/eshu0/RESTServer/pkg/request"
 	"github.com/eshu0/mybot"
@@ -40,6 +41,7 @@ func (bot Rbot) TurnLeft(request Request.ServerRequest) {
 
 	fmt.Println("Rbot - TurnLeft")
 	bot.mbot.SpinLeft()
+	time.Sleep(1 * time.Second)
 	bot.mbot.Stop()
 
 }
@@ -48,6 +50,7 @@ func (bot Rbot) TurnRight(request Request.ServerRequest) {
 	request.Writer.Header().Set("Access-Control-Allow-Origin", "*")
 	fmt.Println("Rbot - TurnRight")
 	bot.mbot.SpinRight()
+	time.Sleep(1 * time.Second)
 	bot.mbot.Stop()
 }
 

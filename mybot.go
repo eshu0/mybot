@@ -59,7 +59,7 @@ func (bot *MyBot) Backwards() {
 }
 
 func (bot *MyBot) Stop() {
-	fmt.Println("Ending....")
+	fmt.Println("Stop!")
 	bot.Pin15.Low()
 	bot.Pin11.Low()
 	bot.Pin13.Low()
