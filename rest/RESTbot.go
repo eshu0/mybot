@@ -12,8 +12,8 @@ type Rbot struct {
 	mbot *mybot.MyBot
 }
 
-func NewRbot() Rbot {
-	mbot := mybot.NewMyBot()
+func NewRbot(folder string) Rbot {
+	mbot := mybot.NewMyBot(folder)
 	rb := Rbot{mbot: mbot}
 	return rb
 }
