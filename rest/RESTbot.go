@@ -33,7 +33,7 @@ func (bot Rbot) Forwards(request Request.ServerRequest) {
 func (bot Rbot) Backwards(request Request.ServerRequest) {
 	request.Writer.Header().Set("Access-Control-Allow-Origin", "*")
 	fmt.Println("Rbot - Backwards")
-	bot.mbot.Forwards()
+	bot.mbot.Backwards()
 }
 
 func (bot Rbot) TurnLeft(request Request.ServerRequest) {
