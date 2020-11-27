@@ -1,11 +1,11 @@
 [Unit]
 Description=Robot API
-After=network.target
-StartLimitIntervalSec=0
 
 [Service]
-Type=simple
+User=pi
+WorkingDirectory=/home/pi/go/src/github.com/eshu0/mybot/rest
+ExecStart=/home/pi/go/src/github.com/eshu0/mybot/rest/restserver
 Restart=always
-RestartSec=1
-User=root
-ExecStart=/home/pi/go/src/github.com/eshu0/mybot/rest/rest
+
+[Install]
+WantedBy=multi-user.target
