@@ -35,6 +35,22 @@ func (bot Rbot) Backwards(request Request.ServerRequest) {
 	bot.mbot.Forwards()
 }
 
+func (bot Rbot) TurnLeft(request Request.ServerRequest) {
+	request.Writer.Header().Set("Access-Control-Allow-Origin", "*")
+
+	fmt.Println("Rbot - TurnLeft")
+	bot.mbot.SpinLeft()
+	bot.mbot.Stop()
+
+}
+
+func (bot Rbot) TurnRight(request Request.ServerRequest) {
+	request.Writer.Header().Set("Access-Control-Allow-Origin", "*")
+	fmt.Println("Rbot - TurnRight")
+	bot.mbot.SpinRight()
+	bot.mbot.Stop()
+}
+
 func (bot Rbot) SpinLeft(request Request.ServerRequest) {
 	request.Writer.Header().Set("Access-Control-Allow-Origin", "*")
 

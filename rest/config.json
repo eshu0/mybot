@@ -31,6 +31,18 @@
 			"methodname": "SpinRight",
 			"httpmethod": "GET",
 			"functionalclass": "Rbot"
+		},
+		{
+			"url": "/Left",
+			"methodname": "TurnLeft",
+			"httpmethod": "GET",
+			"functionalclass": "Rbot"
+		},		
+		{
+			"url": "/Right",
+			"methodname": "TurnRight",
+			"httpmethod": "GET",
+			"functionalclass": "Rbot"
 		}
 	]
 }
