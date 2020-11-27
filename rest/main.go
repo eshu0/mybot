@@ -30,7 +30,7 @@ func main() {
 	RESTCommands.AddDefaults(server)
 	RESTCommands.SetDefaultFunctionalMap(server)
 
-	mbot := NewRbot()
+	mbot := NewRbot("./")
 
 	// this registers the custom structures
 	// in the JSON config the FunctionalClass is the name used for the map "TestAnother"
