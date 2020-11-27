@@ -1,6 +1,8 @@
 package main
 
 import (
+	"os"
+
 	RESTCommands "github.com/eshu0/RESTServer/pkg/commands"
 	RESTConfig "github.com/eshu0/RESTServer/pkg/config"
 	RESTServer "github.com/eshu0/RESTServer/pkg/server"
@@ -30,7 +32,13 @@ func main() {
 	RESTCommands.AddDefaults(server)
 	RESTCommands.SetDefaultFunctionalMap(server)
 
-	mbot := NewRbot("./")
+	path := "./images/"
+
+	if _, err := os.Stat(path); os.IsNotExist(err) {
+		os.Mkdir(path, os.ModePerm)
+	}
+
+	mbot := NewRbot(path)
 
 	// this registers the custom structures
 	// in the JSON config the FunctionalClass is the name used for the map "TestAnother"

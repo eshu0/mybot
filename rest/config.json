@@ -49,6 +49,10 @@
 			"methodname": "Capture",
 			"httpmethod": "GET",
 			"functionalclass": "Rbot"
-		}
+		},
+		{
+			"url": "/images/",
+			"staticdir": "./images/"
+		}		
 	]
 }
