@@ -41,7 +41,7 @@ func (bot Rbot) TurnLeft(request Request.ServerRequest) {
 
 	fmt.Println("Rbot - TurnLeft")
 	bot.mbot.SpinLeft()
-	time.Sleep(1 * time.Second)
+	time.Sleep(200 * time.Millisecond)
 	bot.mbot.Stop()
 
 }
@@ -50,7 +50,7 @@ func (bot Rbot) TurnRight(request Request.ServerRequest) {
 	request.Writer.Header().Set("Access-Control-Allow-Origin", "*")
 	fmt.Println("Rbot - TurnRight")
 	bot.mbot.SpinRight()
-	time.Sleep(1 * time.Second)
+	time.Sleep(200 * time.Millisecond)
 	bot.mbot.Stop()
 }
 
