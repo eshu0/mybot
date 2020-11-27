@@ -19,18 +19,24 @@ func NewRbot() Rbot {
 }
 
 func (bot Rbot) Stop(request Request.ServerRequest) {
+	// stupid CORS - Means that for dev this is a pain
+	// should be removed for PROD or for internet access
 	request.Writer.Header().Set("Access-Control-Allow-Origin", "*")
 	fmt.Println("Rbot - Stop")
 	bot.mbot.Stop()
 }
 
 func (bot Rbot) Forwards(request Request.ServerRequest) {
+	// stupid CORS - Means that for dev this is a pain
+	// should be removed for PROD or for internet access
 	request.Writer.Header().Set("Access-Control-Allow-Origin", "*")
 	fmt.Println("Rbot - Forwards")
 	bot.mbot.Forwards()
 }
 
 func (bot Rbot) Backwards(request Request.ServerRequest) {
+	// stupid CORS - Means that for dev this is a pain
+	// should be removed for PROD or for internet access
 	request.Writer.Header().Set("Access-Control-Allow-Origin", "*")
 	fmt.Println("Rbot - Backwards")
 	bot.mbot.Backwards()
@@ -47,6 +53,8 @@ func (bot Rbot) TurnLeft(request Request.ServerRequest) {
 }
 
 func (bot Rbot) TurnRight(request Request.ServerRequest) {
+	// stupid CORS - Means that for dev this is a pain
+	// should be removed for PROD or for internet access
 	request.Writer.Header().Set("Access-Control-Allow-Origin", "*")
 	fmt.Println("Rbot - TurnRight")
 	bot.mbot.SpinRight()
@@ -55,6 +63,8 @@ func (bot Rbot) TurnRight(request Request.ServerRequest) {
 }
 
 func (bot Rbot) SpinLeft(request Request.ServerRequest) {
+	// stupid CORS - Means that for dev this is a pain
+	// should be removed for PROD or for internet access
 	request.Writer.Header().Set("Access-Control-Allow-Origin", "*")
 
 	fmt.Println("Rbot - SpinLeft")
@@ -62,6 +72,8 @@ func (bot Rbot) SpinLeft(request Request.ServerRequest) {
 }
 
 func (bot Rbot) SpinRight(request Request.ServerRequest) {
+	// stupid CORS - Means that for dev this is a pain
+	// should be removed for PROD or for internet access
 	request.Writer.Header().Set("Access-Control-Allow-Origin", "*")
 	fmt.Println("Rbot - SpinRight")
 	bot.mbot.SpinRight()
