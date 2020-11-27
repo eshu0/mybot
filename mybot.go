@@ -58,7 +58,7 @@ func NewMyBot(folder string) *MyBot {
 	mbot.Pin15 = rpio.Pin(22)
 	mbot.Pin15.Output()
 
-	c := &Camera{false, false, folder}
+	c := &Camera{false, true, folder}
 	mbot.CStill = c
 	return mbot
 
