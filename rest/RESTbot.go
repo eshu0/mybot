@@ -42,7 +42,9 @@ func (bot Rbot) SpinRight(request Request.ServerRequest) {
 	bot.mbot.SpinRight()
 }
 
-func (bot Rbot) Close(request Request.ServerRequest) {
-	fmt.Println("Rbot - Close")
-	bot.mbot.Close()
+func (bot Rbot) Close() {
+	if bot.mbot != nil {
+		bot.mbot.Stop()
+		bot.mbot.Close()
+	}
 }

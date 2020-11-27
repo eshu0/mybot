@@ -31,12 +31,6 @@
 			"methodname": "SpinRight",
 			"httpmethod": "GET",
 			"functionalclass": "Rbot"
-		},
-		{
-			"url": "/Close",
-			"methodname": "Close",
-			"httpmethod": "GET",
-			"functionalclass": "Rbot"
 		}
 	]
 }

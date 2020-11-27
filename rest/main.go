@@ -30,17 +30,16 @@ func main() {
 	RESTCommands.AddDefaults(server)
 	RESTCommands.SetDefaultFunctionalMap(server)
 
+	mbot := NewRbot()
+
 	// this registers the custom structures
 	// in the JSON config the FunctionalClass is the name used for the map "TestAnother"
 	// if these are not public and spelt correctly the lookups will fail
-	server.Register("Rbot", NewRbot())
-
-	// as a test save the updated config
-	server.ConfigFilePath = "./updated.json"
-	server.SaveConfig()
+	server.Register("Rbot", mbot)
 
 	// start Listen Server, this build the mapping and creates Handler/
 	// also fires the "http listen and server method"
 	server.ListenAndServe()
 
+	mbot.Close()
 }
