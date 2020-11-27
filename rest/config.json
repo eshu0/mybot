@@ -43,6 +43,12 @@
 			"methodname": "TurnRight",
 			"httpmethod": "GET",
 			"functionalclass": "Rbot"
+		},
+		{
+			"url": "/Capture",
+			"methodname": "Capture",
+			"httpmethod": "GET",
+			"functionalclass": "Rbot"
 		}
 	]
 }

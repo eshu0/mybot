@@ -79,6 +79,22 @@ func (bot Rbot) SpinRight(request Request.ServerRequest) {
 	bot.mbot.SpinRight()
 }
 
+func (bot Rbot) Capture(request Request.ServerRequest) {
+	// stupid CORS - Means that for dev this is a pain
+	// should be removed for PROD or for internet access
+	request.Writer.Header().Set("Access-Control-Allow-Origin", "*")
+	fmt.Println("Rbot - Capture")
+	s, err := bot.mbot.Capture()
+
+	if err == nil {
+		fmt.Println("Rbot - Capture Success")
+		fmt.Println(s)
+	} else {
+		fmt.Println("Rbot - Error:")
+		fmt.Println(err.Error())
+	}
+}
+
 func (bot Rbot) Close() {
 	if bot.mbot != nil {
 		bot.mbot.Stop()
