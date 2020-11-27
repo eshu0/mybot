@@ -1,4 +1,6 @@
 cp /home/pi/go/src/github.com/eshu0/mybot/mybot.service /etc/systemd/system/mybot.service
+
+systemctl stop mybot
  
 systemctl daemon-reload
 
