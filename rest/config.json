@@ -1,0 +1,42 @@
+{
+	"port": "8080",
+	"templatefilepath": "./views/",	
+	"handlers": [
+		{
+			"url": "/Stop",
+			"methodname": "Stop",
+			"httpmethod": "GET",
+			"functionalclass": "Rbot"
+		},
+		{
+			"url": "/Forwards",
+			"methodname": "Forwards",
+			"httpmethod": "GET",
+			"functionalclass": "Rbot"
+		},
+		{
+			"url": "/Backwards",
+			"methodname": "Backwards",
+			"httpmethod": "GET",
+			"functionalclass": "Rbot"
+		},
+		{
+			"url": "/SpinLeft",
+			"methodname": "SpinLeft",
+			"httpmethod": "GET",
+			"functionalclass": "Rbot"
+		},		
+		{
+			"url": "/SpinRight",
+			"methodname": "SpinRight",
+			"httpmethod": "GET",
+			"functionalclass": "Rbot"
+		},
+		{
+			"url": "/Close",
+			"methodname": "Close",
+			"httpmethod": "GET",
+			"functionalclass": "Rbot"
+		}
+	]
+}
