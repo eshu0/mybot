@@ -33,12 +33,6 @@ type MyBot struct {
 	CStill *Camera
 }
 
-func New(path string) *Camera {
-	if path == "" {
-		return nil
-	}
-	return &Camera{false, false, path}
-}
 
 func NewMyBot(folder string) *MyBot {
 
@@ -65,7 +59,7 @@ func NewMyBot(folder string) *MyBot {
 	mbot.Pin15 = rpio.Pin(22)
 	mbot.Pin15.Output()
 
-	c := camera.New(folder)
+	c := &Camera{false, false, folder)
 	mbot.CStill = c
 	return mbot
 
