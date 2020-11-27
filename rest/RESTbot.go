@@ -8,7 +8,7 @@ import (
 )
 
 type Rbot struct {
-	mbot mybot.MyBot
+	mbot *mybot.MyBot
 }
 
 func NewRbot() Rbot {
