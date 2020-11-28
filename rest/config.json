@@ -75,6 +75,12 @@
 			"functionalclass": "Rbot"
 		},		
 		{
+			"url": "/Command",
+			"templatefilename": "command.html",
+			"httpmethod": "GET",
+			"functionalclass": "Rbot"
+		},				
+		{
 			"url": "/images/",
 			"staticdir": "./images/"
 		}		
