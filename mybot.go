@@ -58,7 +58,7 @@ func NewMyBot(folder string) *MyBot {
 	mbot.Pin15 = rpio.Pin(22)
 	mbot.Pin15.Output()
 
-	c := &Camera{true, false, folder}
+	c := &Camera{verticalFlip: true, horizontalFlip: true, savePath: folder}
 	mbot.CStill = c
 	return mbot
 
@@ -117,13 +117,21 @@ func (bot *MyBot) Vflip(b bool) {
 }
 
 func (bot *MyBot) Capture() (string, error) {
+	fmt.Println("Capturing Photo!")
+
 	args := make([]string, 0)
-	if bot.CStill.horizontalFlip {
-		args = append(args, HFLIP)
-	}
+
 	if bot.CStill.verticalFlip {
 		args = append(args, VFLIP)
+		fmt.Println("Flipping V")
 	}
+
+	if bot.CStill.horizontalFlip {
+		args = append(args, HFLIP)
+		fmt.Println("Flipping H")
+
+	}
+
 	args = append(args, OUTFLAG)
 	fileName := time.Now().Format(TIME_STAMP) + FILE_TYPE
 	fullPath := filepath.Join(bot.CStill.savePath, fileName)
