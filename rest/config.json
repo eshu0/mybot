@@ -51,6 +51,30 @@
 			"functionalclass": "Rbot"
 		},
 		{
+			"url": "/FVR",
+			"methodname": "FlipVR",
+			"httpmethod": "GET",
+			"functionalclass": "Rbot"
+		},
+		{
+			"url": "/FV",
+			"methodname": "FlipV",
+			"httpmethod": "GET",
+			"functionalclass": "Rbot"
+		},
+		{
+			"url": "/FHR",
+			"methodname": "FlipHR",
+			"httpmethod": "GET",
+			"functionalclass": "Rbot"
+		},
+		{
+			"url": "/HV",
+			"methodname": "FlipH",
+			"httpmethod": "GET",
+			"functionalclass": "Rbot"
+		},		
+		{
 			"url": "/images/",
 			"staticdir": "./images/"
 		}		

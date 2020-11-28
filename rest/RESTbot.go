@@ -95,6 +95,38 @@ func (bot Rbot) Capture(request Request.ServerRequest) {
 	}
 }
 
+func (bot Rbot) FlipHR(request Request.ServerRequest) {
+	// stupid CORS - Means that for dev this is a pain
+	// should be removed for PROD or for internet access
+	request.Writer.Header().Set("Access-Control-Allow-Origin", "*")
+	fmt.Println("Rbot - FlipHR")
+	bot.mbot.Hflip(false)
+}
+
+func (bot Rbot) FlipH(request Request.ServerRequest) {
+	// stupid CORS - Means that for dev this is a pain
+	// should be removed for PROD or for internet access
+	request.Writer.Header().Set("Access-Control-Allow-Origin", "*")
+	fmt.Println("Rbot - FlipH")
+	bot.mbot.Hflip(true)
+}
+
+func (bot Rbot) FlipVR(request Request.ServerRequest) {
+	// stupid CORS - Means that for dev this is a pain
+	// should be removed for PROD or for internet access
+	request.Writer.Header().Set("Access-Control-Allow-Origin", "*")
+	fmt.Println("Rbot - FlipVR")
+	bot.mbot.Vflip(false)
+}
+
+func (bot Rbot) FlipV(request Request.ServerRequest) {
+	// stupid CORS - Means that for dev this is a pain
+	// should be removed for PROD or for internet access
+	request.Writer.Header().Set("Access-Control-Allow-Origin", "*")
+	fmt.Println("Rbot - FlipV")
+	bot.mbot.Vflip(true)
+}
+
 func (bot Rbot) Close() {
 	if bot.mbot != nil {
 		bot.mbot.Stop()

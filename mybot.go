@@ -58,7 +58,7 @@ func NewMyBot(folder string) *MyBot {
 	mbot.Pin15 = rpio.Pin(22)
 	mbot.Pin15.Output()
 
-	c := &Camera{false, true, folder}
+	c := &Camera{true, false, folder}
 	mbot.CStill = c
 	return mbot
 
@@ -108,12 +108,12 @@ func (bot *MyBot) Close() {
 	rpio.Close()
 }
 
-func (c *Camera) Hflip(b bool) {
-	c.horizontalFlip = b
+func (bot *MyBot) Hflip(b bool) {
+	bot.CStill.horizontalFlip = b
 }
 
-func (c *Camera) Vflip(b bool) {
-	c.verticalFlip = b
+func (bot *MyBot) Vflip(b bool) {
+	bot.CStill.verticalFlip = b
 }
 
 func (bot *MyBot) Capture() (string, error) {
