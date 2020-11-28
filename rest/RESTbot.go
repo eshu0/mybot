@@ -2,14 +2,17 @@ package main
 
 import (
 	"fmt"
+	"os"
+	"path/filepath"
 	"time"
 
 	Request "github.com/eshu0/RESTServer/pkg/request"
 	"github.com/eshu0/mybot"
+	ibot "github.com/eshu0/mybot/pkg/interfaces"
 )
 
 type Rbot struct {
-	mbot *mybot.MyBot
+	mbot ibot.IMyBot
 }
 
 func NewRbot(folder string) Rbot {
@@ -125,6 +128,49 @@ func (bot Rbot) FlipV(request Request.ServerRequest) {
 	request.Writer.Header().Set("Access-Control-Allow-Origin", "*")
 	fmt.Println("Rbot - FlipV")
 	bot.mbot.Vflip(true)
+}
+
+type Data struct {
+	Total    int
+	Pos      int
+	FileName string
+	Alt      string
+}
+
+func (bot Rbot) Command(request Request.ServerRequest) {
+	fmt.Println("Rbot - Command")
+	request.Writer.Header().Set("Access-Control-Allow-Origin", "*")
+	//var files []string
+
+	root := "./images/"
+	count := 1
+	res := []*Data{}
+
+	err := filepath.Walk(root, func(path string, info os.FileInfo, err error) error {
+		//name := filepath.Ext("main.test.js")
+		base := filepath.Base(path)
+
+		if !info.IsDir() && len(base) > 1 && base[0] != '.' {
+			count++
+			i := Data{FileName: path, Pos: count, Alt: info.Name()} //filepath.Base(path)}
+			res = append(res, &i)
+		}
+
+		return nil
+	})
+	if err != nil {
+		panic(err)
+	}
+
+	for _, i := range res {
+		fmt.Println(i.FileName)
+		i.Total = len(res)
+	}
+	err = request.Template.Execute(request.Writer, res)
+	if err != nil {
+		fmt.Printf("Rbot - Command Error : %s\n", err.Error())
+		return
+	}
 }
 
 func (bot Rbot) Close() {
