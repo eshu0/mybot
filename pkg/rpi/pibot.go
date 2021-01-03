@@ -7,7 +7,7 @@ import (
 	"path/filepath"
 	"time"
 
-	ibot "github.com/eshu0/PiBot/pkg/interfaces"
+	ibot "github.com/eshu0/mybot/pkg/interfaces"
 
 	"github.com/stianeikeland/go-rpio"
 )
@@ -28,7 +28,7 @@ type Camera struct {
 }
 
 type PiBot struct {
-	ibot.IPiBot
+	ibot.IMyBot
 	Pin7   rpio.Pin
 	Pin11  rpio.Pin
 	Pin13  rpio.Pin
