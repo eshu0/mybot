@@ -3,11 +3,15 @@ package textbot
 import (
 	"fmt"
 
+	ibot "github.com/eshu0/mybot/pkg/interfaces"
+
 	"path/filepath"
 	"time"
 )
 
 type TextBot struct {
+	ibot.IMyBot
+
 	horizontalFlip bool
 	verticalFlip   bool
 	savePath       string
