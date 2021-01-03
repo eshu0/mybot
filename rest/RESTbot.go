@@ -7,17 +7,18 @@ import (
 	"time"
 
 	Request "github.com/eshu0/RESTServer/pkg/request"
+	"github.com/eshu0/mybot"
 	ibot "github.com/eshu0/mybot/pkg/interfaces"
 )
 
 type Rbot struct {
-	mbot ibot.IMyBot
+	ibot.IMyBot
 }
 
-func NewRbot(folder string) Rbot {
+func NewRbot(folder string) *mybot.MyBot {
 	mbot := mybot.NewMyBot(folder)
-	rb := Rbot{mbot: mbot}
-	return rb
+	//rb := Rbot{}
+	return mbot
 }
 
 func (bot Rbot) Stop(request Request.ServerRequest) {
@@ -25,7 +26,7 @@ func (bot Rbot) Stop(request Request.ServerRequest) {
 	// should be removed for PROD or for internet access
 	request.Writer.Header().Set("Access-Control-Allow-Origin", "*")
 	fmt.Println("Rbot - Stop")
-	bot.mbot.Stop()
+	bot.Stop()
 }
 
 func (bot Rbot) Forwards(request Request.ServerRequest) {
