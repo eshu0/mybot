@@ -7,7 +7,6 @@ import (
 	"time"
 
 	Request "github.com/eshu0/RESTServer/pkg/request"
-	"github.com/eshu0/mybot"
 	ibot "github.com/eshu0/mybot/pkg/interfaces"
 )
 
