@@ -8,14 +8,14 @@ import (
 )
 
 type TextBot struct {
-	bool   horizontalFlip
-	bool   verticalFlip
-	string savePath
+	horizontalFlip bool
+	verticalFlip   bool
+	savePath       string
 }
 
 func NewTextBot(folder string) *TextBot {
 	tb := &TextBot{}
-	tb.folderpath = folder
+	tb.savePath = folder
 	return tb
 }
 
